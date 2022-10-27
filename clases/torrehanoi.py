@@ -3,7 +3,7 @@ class Pila():
         self.superior = None
     def hanoi(self, n, origen, auxiliar, destino):
         if n == 1:
-            print(f"mover disco de {origen} a {destino}")
+            print(f"Mueve el disco de la torre", {origen} ,"a la torre", {destino})
             return
         else:
             self.hanoi(n-1, origen, destino, auxiliar)
