@@ -1,3 +1,4 @@
+
 class Matriz():
     
     def __init__(self, matriz):
@@ -14,15 +15,7 @@ class Matriz():
                 print(self.matriz[i][j], end=" ")
             print()
     def regladesarrows(self):
-        print ("El determinante de la matriz es: ")
-        determinante = self.matriz[0][0]*self.matriz[1][1]*self.matriz[2][2] + self.matriz[0][1]*self.matriz[1][2]*self.matriz[2][0] + self.matriz[0][2]*self.matriz[1][0]*self.matriz[2][1] - self.matriz[0][2]*self.matriz[1][1]*self.matriz[2][0] - self.matriz[0][1]*self.matriz[1][0]*self.matriz[2][2] - self.matriz[0][0]*self.matriz[1][2]*self.matriz[2][1]
-        return determinante
+        print(" El determinante de la matriz es: ")
+        determinate = self.matriz[0][0] * self.matriz[1][1] * self.matriz[2][2] + self.matriz[0][1] * self.matriz[1][2] * self.matriz[2][0] + self.matriz[0][2] * self.matriz[1][0] * self.matriz[2][1] - self.matriz[0][2] * self.matriz[1][1] * self.matriz[2][0] - self.matriz[0][1] * self.matriz[1][0] * self.matriz[2][2] - self.matriz[0][0] * self.matriz[1][2] * self.matriz[2][1]
+        print(determinate)
 
-
-
-    
-    
-
-
-   
-   

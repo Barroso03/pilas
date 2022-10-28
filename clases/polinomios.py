@@ -1,5 +1,8 @@
 # suma polinomica y multiplicacion polinomica con linkelist
 
+from __future__ import division
+
+
 class Polinomio():
     def __init__(self):
         self.poli = []
@@ -9,13 +12,13 @@ class Polinomio():
         for i in range(len(self.poli)):
             print(self.poli[i][0], "x^", self.poli[i][1], end=" + ")
         print()
-    def suma(self, poli2):
+    def restar(self, poli2):
         poli3 = Polinomio()
         i = 0
         j = 0
         while i < len(self.poli) and j < len(poli2.poli):
             if self.poli[i][1] == poli2.poli[j][1]:
-                poli3.agregar(self.poli[i][0] + poli2.poli[j][0], self.poli[i][1])
+                poli3.agregar(self.poli[i][0] - poli2.poli[j][0], self.poli[i][1])
                 i += 1
                 j += 1
             elif self.poli[i][1] > poli2.poli[j][1]:
@@ -31,10 +34,44 @@ class Polinomio():
             poli3.agregar(poli2.poli[j][0], poli2.poli[j][1])
             j += 1
         return poli3
-    def multiplicacion(self, poli2):
+    def division(self, poli2):
         poli3 = Polinomio()
-        for i in range(len(self.poli)):
-            for j in range(len(poli2.poli)):
-                poli3.agregar(self.poli[i][0] * poli2.poli[j][0], self.poli[i][1] + poli2.poli[j][1])
+        i = 0
+        j = 0
+        while i < len(self.poli) and j < len(poli2.poli):
+            if self.poli[i][1] == poli2.poli[j][1]:
+                poli3.agregar(self.poli[i][0] / poli2.poli[j][0], self.poli[i][1])
+                i += 1
+                j += 1
+            elif self.poli[i][1] > poli2.poli[j][1]:
+                poli3.agregar(self.poli[i][0], self.poli[i][1])
+                i += 1
+            else:
+                poli3.agregar(poli2.poli[j][0], poli2.poli[j][1])
+                j += 1
+        while i < len(self.poli):
+            poli3.agregar(self.poli[i][0], self.poli[i][1])
+            i += 1
+        while j < len(poli2.poli):
+            poli3.agregar(poli2.poli[j][0], poli2.poli[j][1])
+            j += 1
         return poli3
+    def eliminaruntermino(self, termino):
+        for i in range(len(self.poli)):
+            if self.poli[i][1] == termino:
+                del self.poli[i]
+                break
+
+Polinomio1 = Polinomio()
+Polinomio1.agregar(2, 3)
+Polinomio1.agregar(3, 2)
+print("El primer polinomio es: ")
+Polinomio2 = Polinomio()
+Polinomio2.agregar(1, 2)
+Polinomio2.agregar(1, 1)
+print("El segundo polinomio es: ")
+division = Polinomio1.division(Polinomio2)
+print("La division de los polinomios es: ")
+division.mostrar()
+Polinomio1.eliminaruntermino(2)
 
