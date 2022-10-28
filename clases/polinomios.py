@@ -1,6 +1,6 @@
 # suma polinomica y multiplicacion polinomica con linkelist
 
-from __future__ import division
+
 
 
 class Polinomio():
@@ -56,22 +56,40 @@ class Polinomio():
             poli3.agregar(poli2.poli[j][0], poli2.poli[j][1])
             j += 1
         return poli3
-    def eliminaruntermino(self, termino):
+    # elimina un termino cualquiera de un polinomio
+    def eliminar(self, termino):
         for i in range(len(self.poli)):
             if self.poli[i][1] == termino:
                 del self.poli[i]
                 break
+    # dime si un termino existe en un polinomio
+    def existe(self, termino):
+        for i in range(len(self.poli)):
+            if self.poli[i][1] == termino:
+                return True
+        return False
 
 Polinomio1 = Polinomio()
 Polinomio1.agregar(2, 3)
 Polinomio1.agregar(3, 2)
 print("El primer polinomio es: ")
+print(Polinomio1.mostrar())
 Polinomio2 = Polinomio()
 Polinomio2.agregar(1, 2)
 Polinomio2.agregar(1, 1)
 print("El segundo polinomio es: ")
+print(Polinomio2.mostrar())
+resta = Polinomio1.restar(Polinomio2)
+print("La resta de los polinomios es: ")
+print(resta.mostrar())
 division = Polinomio1.division(Polinomio2)
 print("La division de los polinomios es: ")
 division.mostrar()
-Polinomio1.eliminaruntermino(2)
+print("Eliminamos un termino: ")
+Polinomio1.eliminar(2)
+print(Polinomio1.mostrar())
+print("Verificamos si existe un termino: ")
+print(Polinomio1.existe(3))
+
+    
 
