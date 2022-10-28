@@ -12,9 +12,13 @@ class Pila:
         if n == 1:
             print(f"Mover disco de {origen} a {destino}")
             return
-        self.hanoi(n - 1, origen, destino, auxiliar)
-        print(f"Mover disco de {origen} a {destino}")
-        self.hanoi(n - 1, auxiliar, origen, destino)
+        else:
+            self.hanoi(n-1, origen, destino, auxiliar)
+            print(f"Mover disco de {origen} a {destino}")
+            self.hanoi(n-1, auxiliar, origen, destino)
+    def jugarhanoi(self):
+        n = int(input("Ingrese el numero de discos: "))
+        self.hanoi(n, "1", "2", "3")
             
 
        

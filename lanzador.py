@@ -19,7 +19,7 @@ def iniciar():
         opcion = input("Ingrese una opcion: ")
         if opcion == "1":
             torre = Pila()
-            torre.hanoi(4, "1", "2", "3")
+            torre.jugarhanoi()
         elif opcion == "2":
             matriz = Matriz([[0,0,0],[0,0,0],[0,0,0]])
             matriz.rellenar()
