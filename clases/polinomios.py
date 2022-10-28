@@ -1,8 +1,4 @@
 # suma polinomica y multiplicacion polinomica con linkelist
-
-
-
-
 class Polinomio():
     def __init__(self):
         self.poli = []
@@ -69,27 +65,7 @@ class Polinomio():
                 return True
         return False
 
-Polinomio1 = Polinomio()
-Polinomio1.agregar(2, 3)
-Polinomio1.agregar(3, 2)
-print("El primer polinomio es: ")
-print(Polinomio1.mostrar())
-Polinomio2 = Polinomio()
-Polinomio2.agregar(1, 2)
-Polinomio2.agregar(1, 1)
-print("El segundo polinomio es: ")
-print(Polinomio2.mostrar())
-resta = Polinomio1.restar(Polinomio2)
-print("La resta de los polinomios es: ")
-print(resta.mostrar())
-division = Polinomio1.division(Polinomio2)
-print("La division de los polinomios es: ")
-division.mostrar()
-print("Eliminamos un termino: ")
-Polinomio1.eliminar(2)
-print(Polinomio1.mostrar())
-print("Verificamos si existe un termino: ")
-print(Polinomio1.existe(3))
+
 
     
 
